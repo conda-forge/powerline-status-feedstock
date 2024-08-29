@@ -1,5 +1,5 @@
 {% set name = "powerline-status" %}
-{% set version = "2.8.3" %}
+{% set version = "2.8.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,16 @@ package:
 
 source:
   url: https://github.com/powerline/powerline/archive/{{ version }}.tar.gz
-  sha256: 45d838dbac94a1363942899708b6ce7c71c1cad9e1b9d048affab4f630c4cb98
+  sha256: 9e846af9379b57e410efe264cff3a6b98eb78dd9526e83016776ae5ffc5798f4
 
 build:
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
